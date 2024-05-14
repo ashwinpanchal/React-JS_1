@@ -14,7 +14,21 @@
     <script type="text/jsx">
       const domNode = document.getElementById('app');
       const root = ReactDOM.createRoot(domNode);
-      root.render(<h1>Develop. Preview. Ship.</h1>);
+
+      function Header({children}){
+        return <h1>
+          {children ? children : "Default Heading"}
+        </h1>;
+      }
+
+      function HomePage(){
+        return <>
+          <Header>Hello World!</Header>
+          <Header></Header>
+        </>
+      }
+
+      root.render(<HomePage/>);
     </script>
   </body>
 </html>
