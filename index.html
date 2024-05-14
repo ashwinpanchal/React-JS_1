@@ -22,7 +22,13 @@
       }
 
       function HomePage(){
+        const [count,setCount] = React.useState(0);
         const listItems = ["Joker", "Titanic" , "Avatar", "Game of Thrones"]
+
+        function handleClick(){
+          setCount((count) => count+1);
+        }
+
         return <>
           <Header>Hello World!</Header>
           <Header></Header>
@@ -31,6 +37,7 @@
               return <li key={name}>{name}</li>
             })}
           </ul>
+          <button onClick={handleClick}>Like ({count})</button>
         </>
       }
 
